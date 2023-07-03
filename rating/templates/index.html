@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Определение вероятного рейтинга по рецензии</title>
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}" />
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+</head>
+<body>
+    <div class="container">
+        <div class="block logo-image">
+            <img src="{% static "img/banner.jpeg" %}" alt="">
+        </div>
+        <div class="block form-data">
+            <h2>Попробую угадать, понравился ли Вам фильм :)</h2>
+            <p>Введите отзыв о фильме (на английском языке)</p>
+            <form type="text" method="post" action="postuser/">
+                {% csrf_token %}
+                <textarea name="name"></textarea>
+                <div class="button-wrapper">
+                    <input class="submit-button" type="submit" value="Проверить" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
